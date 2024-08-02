@@ -1,0 +1,88 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: #ebebeb;
+    color: #000;
+}
+
+h1 {
+    padding-left: 10px;
+    margin: 0;
+}
+
+.Addnew {
+    margin-left: auto;
+    margin-right: 20px;
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.Addnew:hover {
+    transform: scale(1.3);
+}
+
+svg {
+    padding: 10px;
+    width: 36px;
+    height: 36px;
+    align-self: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+.bookGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.book {
+    background-color: #c2c2c2;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cover {
+    width: 200px;
+    height:320px;
+    margin-bottom: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.bookTitle {
+    font-size: 1.2em;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.author{
+    font-size: 1em;
+    color: #555;
+    text-align: center;
+}
