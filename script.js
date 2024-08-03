@@ -11,8 +11,12 @@ function closeForm() {
 
 const myLibrary = [];
 
-function Book() {
-  // the constructor...
+function Book(name,author,pages,img,status) {
+  this.name = name;
+  this.author = author;
+  this.pages = pages;
+  this.img = img;
+  this.status = status
 }
 
 function addBookToLibrary() {

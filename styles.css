@@ -179,7 +179,8 @@ form>input{
 .submit{
     margin-bottom: 10px;
 }
-#pages{
+#pages,
+#status{
     margin-bottom: 50px;
 }
 
