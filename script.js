@@ -1,17 +1,17 @@
 function openForm() {
-  document.getElementById('formContainer').classList.remove('notdisplayed');
-  document.getElementById('formContainer').classList.add('displayed');
+  document.getElementById("formContainer").classList.remove("notdisplayed");
+  document.getElementById("formContainer").classList.add("displayed");
 }
 
 function closeForm() {
-  document.getElementById('formContainer').classList.add('notdisplayed');
-  document.getElementById('formContainer').classList.remove('displayed');
+  document.getElementById("formContainer").classList.add("notdisplayed");
+  document.getElementById("formContainer").classList.remove("displayed");
 }
 
-document.getElementById("submitBtn").addEventListener('click', function() {
-  const name = document.getElementById('name').value;
-  const author = document.getElementById('author').value;
-  const pages = document.getElementById('pages').value;
+document.getElementById("submitBtn").addEventListener("click", function() {
+  const name = document.getElementById("name").value;
+  const author = document.getElementById("author").value;
+  const pages = document.getElementById("pages").value;
 
   if (name && author && pages) {
     document.getElementById("newBook").submit();
@@ -36,16 +36,11 @@ const harryPotter = new Book("Harry Potter and the Sorcerer's Stone","J.K. Rowli
 
 function displayBook(){
   const booksContainer = document.getElementById("bookGrid");
-  booksContainer.innerHTML = '';
+  booksContainer.innerHTML = "";
 
   myLibrary.forEach((book)=>{
       const bookDiv = document.createElement("div");
       bookDiv.classList.add("book");
-      if(book.img.name === ""){
-          book.img = "images/noCover.png";
-      }
-  
-
       bookDiv.innerHTML = `
             <img class="cover" src="${book.img}" alt="">
             <h2 class="bookTitle">${book.name}</h2>
@@ -67,10 +62,21 @@ form.addEventListener("submit", function(e) {
   e.preventDefault();
   const data = new FormData(form);
   const bookData = {};
-  for (const [name, value] of data) {
+  for (const [name, value] of data.entries()) {
     bookData[name] = value;
   }
-  //console.log(bookData[0]);
-  const bookObject = new Book(bookData.name,bookData.author,bookData.pages,bookData.coverImg,bookData.status);
-  //console.table(myLibrary);
+
+  const fileInput = document.getElementById("coverImg");
+  const file = fileInput.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(event) {
+      const imgURL = event.target.result;
+      const bookObject = new Book(bookData.name, bookData.author, bookData.pages, imgURL, bookData.status);
+    };
+    reader.readAsDataURL(file);
+  } else {
+    const bookObject = new Book(bookData.name, bookData.author, bookData.pages, "/images/noCover.png", bookData.status);
+  }
+  form.reset();
 });
