@@ -37,7 +37,7 @@ svg {
     height: 50px;
 }
 
-.bookGrid {
+#bookGrid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 20px;

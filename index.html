@@ -16,7 +16,7 @@
         <button onclick="openForm()"><svg class="Addnew" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>plus-circle-outline</title><path d="M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M13,7H11V11H7V13H11V17H13V13H17V11H13V7Z" /></svg></button>
     </div>
     <div id="formContainer" class="Form notdisplayed">
-        <form action="#" method="dialog" class="newBook">
+        <form method="dialog" id="newBook">
             <h2 class="caption">Enter New Book</h2>
             <label for="name"><b>Name</b></label>
             <input type="text" id="name" placeholder="Enter Book Title" name="name" required>
@@ -28,27 +28,16 @@
             <input type="number" id="pages" placeholder="Enter № Pages" name="pages" required min="0">
 
             <label for="coverImg"><b>Upload Cover</b></label>
-            <input type="file" id="coverImg" name="coverImg">
+            <input type="file" id="coverImg" name="coverImg" accept="image/*">
 
             <label for="status"><b>Finished Reading?</b></label>
             <input type="checkbox" id="status" name="status">
 
-
-            <button type="submit" class="btn submit" onclick="closeForm()">Submit</button>
+            <button id="submitBtn" type="submit" class="btn submit"">Submit</button>
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
     </div>
-    <div class="bookGrid">
-        <div class="book">
-            <img class="cover" src="https://res.cloudinary.com/bloomsbury-atlas/image/upload/w_568,c_scale/jackets/9781408855652.jpg" alt="">
-            <h2 class="bookTitle">Harry Potter and the Sorcerer's Stone</h2>
-            <p class="author">J.K. Rowling</p>
-            <p class="pages">235 Pages</p>
-            <div class="menu">
-                <button type="button" class="readButton"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M200-120v-640q0-33 23.5-56.5T280-840h400q33 0 56.5 23.5T760-760v640L480-240 200-120Zm80-122 200-86 200 86v-518H280v518Zm0-518h400-400Z"/></svg>READ </button>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>trash-can-outline</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>
-            </div>
-        </div>
+    <div id="bookGrid">
     </div>
     <script src="script.js"></script>
 </body>
