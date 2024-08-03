@@ -140,10 +140,18 @@ svg {
 form{
     display: grid;
     text-align: center;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.836);
+    padding: 100px;
+    border-radius: 10px;
 }
 
 form>input{
-    width: 100%;
+    width: 200px;
+    transition: transform 0.5s ease-in-out;
+    border: none;
+    border-bottom: 1px rgb(99, 99, 99) solid;
+    height: 30px;
     justify-self: center;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -160,4 +168,21 @@ form>input{
     align-items: center;
     justify-content: center;
     z-index: 1000;
+}
+
+
+.caption{
+    font-size: 34px;
+    margin-top: 0;
+}
+
+.submit{
+    margin-bottom: 10px;
+}
+#pages{
+    margin-bottom: 50px;
+}
+
+input:hover{   
+    transform: scale(1.05);
 }

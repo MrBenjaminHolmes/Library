@@ -7,3 +7,14 @@ function closeForm() {
   document.getElementById('formContainer').classList.add('notdisplayed');
   document.getElementById('formContainer').classList.remove('displayed');
 }
+
+
+const myLibrary = [];
+
+function Book() {
+  // the constructor...
+}
+
+function addBookToLibrary() {
+  // do stuff here
+}
