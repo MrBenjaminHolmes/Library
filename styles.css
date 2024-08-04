@@ -96,10 +96,13 @@ svg {
 
 .menu>button.on{
     background-color: #8bd373;
+    
 }   
 
 .menu>button.off{
     background-color: #f04343;
+    padding-right: 10px;
+    
 }   
 
 .menu>button{
