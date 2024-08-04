@@ -123,9 +123,9 @@ form.addEventListener("submit", function(e) {
     reader.readAsDataURL(file);
   } else {
     if (bookData.status === undefined) {
-      new Book(bookData.name, bookData.author, bookData.pages, "/images/noCover.png", "off");
+      new Book(bookData.name, bookData.author, bookData.pages, "images/noCover.png", "off");
     } else {
-      new Book(bookData.name, bookData.author, bookData.pages, "/images/noCover.png", bookData.status);
+      new Book(bookData.name, bookData.author, bookData.pages, "images/noCover.png", bookData.status);
     }
   }
   form.reset();
