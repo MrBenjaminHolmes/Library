@@ -94,6 +94,14 @@ svg {
     display: flex;
 }
 
+.menu>button.on{
+    background-color: #8bd373;
+}   
+
+.menu>button.off{
+    background-color: #f04343;
+}   
+
 .menu>button{
     display: flex;
     justify-self: flex-start;
