@@ -21,7 +21,8 @@ document.getElementById("submitBtn").addEventListener("click", function() {
 
 const myLibrary = [];
 
-function Book(name, author, pages, img, status) {
+class Book{
+  constructor(name, author, pages, img, status) {
   this.id = myLibrary.length;
   this.name = name;
   this.author = author;
@@ -30,6 +31,7 @@ function Book(name, author, pages, img, status) {
   this.status = status;
   myLibrary.push(this);
   displayBook();
+  }
 }
 
 function displayBook() {
